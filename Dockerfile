@@ -10,8 +10,8 @@ RUN echo "gem: --no-ri --no-rdoc" > ~/.gemrc
 RUN gem install --no-rdoc --no-ri puppet librarian-puppet
 
 ADD Puppetfile /
-ADD puppetdb.pp /
 RUN librarian-puppet install
+ADD puppetdb.pp /
 RUN puppet apply --modulepath=/modules puppetdb.pp
 
 EXPOSE 8080 8081 8082
