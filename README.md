@@ -8,5 +8,5 @@ A simple puppetdb docker container for pupetdb.
     cd docker-puppetdb
     docker build .
     docker run --name puppetdb-postgres -e POSTGRES_PASSWORD=puppetdb -e POSTGRES_USER=puppetdb -d postgres
-    docker run -d -P --link puppetdb-postgres:postgres puppetdb
+    docker run -d -P --name puppetdb --link puppetdb-postgres:postgres puppetdb
 
